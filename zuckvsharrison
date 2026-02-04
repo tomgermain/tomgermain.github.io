@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--I built this website from scratch, how did I do? lmk at hello@tomgermain.com-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta property="og:site_name" content="Thomas Germain"/>
+  <meta property="og:title" content="Thomas Germain"/>
+  <meta property="og:url" content="http://www.tomgermain.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="Thomas Germain is a journalist who writes about technology, history, and science."/>
+  <meta itemprop="name" content="Thomas Germain"/>
+  <meta itemprop="url" content="http://www.tomgermain.com/"/>
+  <meta itemprop="description" content="Thomas Germain is a journalist who writes about technology, history, and science."/>
+  <meta name="twitter:title" content="Thomas Germain"/>
+  <meta name="twitter:url" content="http://www.tomgermain.com/"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:description" content="Thomas Germain is a journalist who writes about technology, history, and science"/>
+  <meta name="description" content="Thomas Germain is a journalist who writes about technology, history, and science" />
+  <title>Thomas Germain</title>
+  
+
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--buttons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <!--font-->
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway' rel='stylesheet'>
+
+
+  <style>
+  .space {
+  padding: 30px;
+  float: left;
+  width: 17%;
+  }
+
+
+  .main {
+    padding: 10px;
+    float: left;
+    padding-top: 60px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+  .space {
+   display: none;
+  }
+  </style>
+</head>
+<body>
+
+
+    <!-- Page Layout -->
+    <div class="space"></div>
+
+
+
+
+          <br><div class="main"><div style="font-style: italic; font-family: Josefin Sans; font-size: 80px"><span class="red-text text-lighten-1"><div style=" line-height: 70px;">Thomas<br>Germain</span></div></div>
+
+
+    <div style="font-family: Raleway; font-size: 1.125em; padding-top: 10px; padding-left: 13px; max-width: 450px; line-height: 19px">
+
+      <h1>There's No Question That Benjamin Harrison Would Dunk on Mark Zuckerberg</h1>
+
+<br>
+
+<p>Mark Zuckerberg is in great shape. He trains regularly, he’s competed in Brazilian jiu-jitsu, and he clearly has the discipline. You can't overlook that. Most people you throw into hypothetical matchups don’t have anything like that level of conditioning.</p>
+
+<p>But basketball is about more than conditioning. One-on-one tends to reward size, strength, and the ability to generate the same reliable shot over and over. That’s why I’m not convinced Zuckerberg would win against Benjamin Harrison, the 23rd President of the United States, who served from 1889 to 1893.</p>
+
+<p>To be clear, there’s no record of Harrison playing basketball. The sport was invented in 1891 during his presidency, and it’s unlikely that any president of the 19th century had any game in the modern sense. But you have to set aside questions like "who would have the better jump shot." We need to consider who would control a physical one-on-one game with no help on defence, no spacing, and no teammates to hide behind.</p>
+
+<p>Harrison came from a world that demanded physicality. Even if you ignore the romantic idea that “men used to be built different,” daily life in the late 1800s generally involved more manual work, and fewer soft edges. Zuckerberg has access to modern training and recovery, but his athleticism is tailored to the modern era: high effort, highly structured, and mostly indoors.</p>
+
+<p>If Harrison has any real size advantage, the matchup shifts fast. You don’t need great ball handling for one-on-one if you can back someone down, bump them off their line, and finish at the rim. We're not just talking about skill here.</p>
+
+<p>The other factor is that Zuckerberg’s jiu-jitsu background is impressive, but think about why we have weight classes. Grappling gives you practice in balance and leverage, but it also demonstrates that size matters when two people are fighting for control. Basketball obviously isn’t combat, but one-on-one has the same problem. Whoever dictates contact usually dictates possessions.</p>
+
+<p>In a modern gym, with modern shoes, and rules designed to keep things clean, Zuckerberg probably looks better early in the game. He’s faster, he’s trained, and he’s the kind of person who won’t gas out. But over the course of a full game, especially make-it-take-it, the advantage tends to shift toward the person who can get a high-percentage look every time without needing to create space.</p>
+
+<p>Harrison died in 1901, long before Zuckerberg was born, we obviously won't get a final answer here. But if you drop them into the same era, give them the same ball and the same shoes, and treat it like a real one-on-one game rather than a skills contest, I don’t think Zuckerberg survives the matchup. Harrison comes out on top more often than not.</p>
+
+<br><br>
+
+    </div>
+
+<!--nav-->      
+          <br>
+          <div style=" font-family: Raleway; font-size: 1.2em; max-width: 450px; padding-top: 10px; padding-left: 13px;">
+                       
+                  <a href="https://www.tomgermain.com"><span class="black-text" style="padding-right: 20px;">Home</a> | </span>
+                  <a href="clips.html"><span class="black-text" style=" padding-left: 20px; padding-right: 20px">My Work</a> | </span>
+<a href="news.html"><span class="black-text" style=" padding-left: 20px; padding-right: 20px">News</a> | </span>
+                  <a href="contact.html"><span class="black-text" style=" padding-left: 20px; padding-right: 30px">Contact</a></span>
+                  <a href="https://www.twitter.com/thomasgermain/" title="twitter" target = "_blank" rel="noopener noreferrer"><i class="fab fa-twitter" style="font-size: 1.3em; padding-right: 20px"></i></a>
+                  <a href="https://www.linkedin.com/in/thomas-germain/" title="linkedin" target = "_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" style="font-size: 1.3em"></i></a>
+
+
+    </div>
+    </div>
+</body>
+</html>
