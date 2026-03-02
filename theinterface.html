@@ -1,210 +1,158 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Interface Podcast</title>
-    <meta
-      name="description"
-      content="The Interface: the show that explores how tech is rewiring your week and your world."
-    />
-    <style>
-      :root {
-        --bg: #0b0b0f;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --border: rgba(255, 255, 255, 0.14);
-        --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Interface Podcast</title>
+  <meta name="description" content="The Interface: the show that explores how tech is rewiring your week and your world." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Google Font: Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+    }
+
+    .wrap {
+      width: min(920px, 100%);
+      text-align: center;
+    }
+
+    .logo {
+      width: min(520px, 100%);
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    .copy {
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .copy p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: clamp(16px, 2.1vw, 20px);
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .copy strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .spacer {
+      height: 18px;
+    }
+
+    .cta {
+      margin-top: 6px;
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .platforms {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .platform {
+      display: inline-block;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    @media (hover: hover) {
+      .platform:hover {
+        transform: scale(1.06);
+        opacity: 0.85;
       }
+    }
 
-      * { box-sizing: border-box; }
+    .platform img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
 
-      body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-          "Segoe UI Emoji";
-        color: var(--text);
-        background: radial-gradient(900px 500px at 50% 0%, rgba(255,255,255,0.08), transparent 60%),
-          var(--bg);
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 24px 16px;
-      }
-
-      .wrap {
-        width: min(920px, 100%);
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: clamp(18px, 3vw, 36px);
-        backdrop-filter: blur(8px);
-      }
-
-      .logo {
-        display: block;
-        width: min(520px, 100%);
-        height: auto;
-        margin: 0 auto 18px;
-      }
-
-      .copy {
-        text-align: center;
-        max-width: 60ch;
-        margin: 0 auto;
-      }
-
-      .copy p {
-        margin: 0;
-        line-height: 1.5;
-        font-size: clamp(16px, 2.1vw, 20px);
-        color: var(--muted);
-      }
-
-      .copy p strong {
-        color: var(--text);
-        font-weight: 650;
-      }
-
-      .spacer { height: 18px; }
-
-      .cta {
-        margin-top: 6px;
-        font-size: clamp(15px, 2vw, 18px);
-        color: var(--text);
-      }
-
-      .platforms {
-        margin-top: 18px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      @media (max-width: 720px) {
-        .platforms {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      .platform {
-        display: grid;
-        place-items: center;
-        padding: 14px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        background: rgba(0,0,0,0.18);
-        text-decoration: none;
-        transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-        outline: none;
-      }
-
-      .platform:focus-visible {
-        border-color: rgba(255,255,255,0.35);
-        box-shadow: 0 0 0 4px rgba(255,255,255,0.12);
-      }
-
-      @media (hover: hover) {
-        .platform:hover {
-          transform: translateY(-2px);
-          background: rgba(0,0,0,0.28);
-          border-color: rgba(255,255,255,0.22);
-        }
-      }
-
+    @media (max-width: 600px) {
       .platform img {
-        width: 100%;
-        max-width: 160px;
-        height: auto;
-        display: block;
+        height: 48px;
       }
+    }
+  </style>
+</head>
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-    </style>
-  </head>
+<body>
+  <main class="wrap">
 
-  <body>
-    <main class="wrap">
-      <section class="card" aria-label="The Interface podcast subscribe page">
-        <img class="logo" src="Images/THEINTERFACE.jpg" alt="The Interface" />
+    <img class="logo" src="Images/THEINTERFACE.jpg" alt="The Interface" />
 
-        <div class="copy">
-          <p>
-            <strong>The Interface</strong>, the show that explores how tech is rewiring your week and your world.
-            Hosted by Thomas Germain, Karen Hao, and Nicky Woolf.
-          </p>
+    <div class="copy">
+      
+      <p>
+        Stop doomscrolling
+      <p>
+        <strong>The Interface</strong> is the BBC's flagship technology podcast, a fast, funny, and fiercely informed take on how tech is rewiring your week – and your world.
+        Hosted by Thomas Germain, Karen Hao, and Nicky Woolf.
+      </p>
 
-          <div class="spacer"></div>
+      <div class="spacer"></div>
 
-          <p class="cta">Subscribe below on your favorite podcast app:</p>
-        </div>
+      <p class="cta">
+        Subscribe below on your favorite podcast app:
+      </p>
+    </div>
 
-        <div class="platforms" role="list" aria-label="Subscribe links">
-          <a
-            class="platform"
-            role="listitem"
-            href="https://podcasts.apple.com/us/podcast/the-interface/id1870822992"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen on Apple Podcasts"
-          >
-            <img src="Images/apple.png" alt="Apple Podcasts" />
-          </a>
+    <div class="platforms">
+      <a class="platform"
+         href="https://podcasts.apple.com/us/podcast/the-interface/id1870822992"
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/apple.png" alt="Apple Podcasts">
+      </a>
 
-          <a
-            class="platform"
-            role="listitem"
-            href="https://open.spotify.com/show/4J8jzpLa58VMTeY5xGUxxG"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen on Spotify"
-          >
-            <img src="Images/spotify.png" alt="Spotify" />
-          </a>
+      <a class="platform"
+         href="https://open.spotify.com/show/4J8jzpLa58VMTeY5xGUxxG"
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/spotify.png" alt="Spotify">
+      </a>
 
-          <a
-            class="platform"
-            role="listitem"
-            href="https://pocketcasts.com/podcast/the-interface/c1c38690-d8f4-013e-7c78-02d8c28b0a65"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen on Pocket Casts"
-          >
-            <img src="Images/pocketcasts.png" alt="Pocket Casts" />
-          </a>
+      <a class="platform"
+         href="https://pocketcasts.com/podcast/the-interface/c1c38690-d8f4-013e-7c78-02d8c28b0a65"
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/pocketcasts.png" alt="Pocket Casts">
+      </a>
 
-          <a
-            class="platform"
-            role="listitem"
-            href="https://www.youtube.com/playlist?list=PL-Tad9dbx0_XmuCe_II-kmGfOJzPUcb"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Watch on YouTube"
-          >
-            <img src="Images/youtube.png" alt="YouTube" />
-          </a>
-        </div>
+      <a class="platform"
+         href="https://www.youtube.com/playlist?list=PL-Tad9dbx0_XmuCe_II-kmGfOJzPUcb"
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/youtube.png" alt="YouTube">
+      </a>
+    </div>
 
-        <p class="sr-only">
-          If the logos don’t load, ensure the image files exist at the specified paths inside your site.
-        </p>
-      </section>
-    </main>
-  </body>
+  </main>
+</body>
 </html>
