@@ -14,171 +14,161 @@
 
   <style>
     :root{
-      --bg0:#07080c;
-      --bg1:#0b0b12;
-      --text: rgba(255,255,255,.93);
-      --muted: rgba(255,255,255,.74);
-      --focus: rgba(255,255,255,.22);
+      --text: rgba(255,255,255,.95);
+      --muted: rgba(255,255,255,.72);
+      --focus: rgba(255,255,255,.25);
     }
 
     *{ box-sizing:border-box; }
 
-    /* Important: set BOTH html and body backgrounds */
     html, body{
-      height: 100%;
-      background: #000; /* fallback */
+      height:100%;
+      background:#000;
     }
 
     body{
       margin:0;
-      font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
-      min-height:100vh;
+      font-family:"Raleway", sans-serif;
+      color:var(--text);
       display:grid;
       place-items:center;
-      padding: 28px 16px;
-
+      padding:50px 20px;
       background:
-        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.10), transparent 58%),
-        radial-gradient(700px 420px at 15% 20%, rgba(120,150,255,.10), transparent 60%),
-        radial-gradient(700px 420px at 85% 30%, rgba(255,120,180,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.06), transparent 60%),
+        #0a0a12;
     }
 
     .wrap{
-      width: min(980px, 100%);
+      width:100%;
+      max-width:1000px;
       text-align:center;
     }
 
-    /* Keep the hero logo narrower than the text column */
+    /* HERO — intentionally wider than text */
     .hero-logo{
-      width: min(520px, 92vw);
-      height:auto;
       display:block;
-      margin: 0 auto 18px;
+      width:min(900px, 96vw);
+      height:auto;
+      margin:0 auto 32px;
     }
 
-    .copy{
-      width: min(760px, 100%);
-      margin: 0 auto;
+    /* TEXT COLUMN */
+    .text-block{
+      max-width:720px;
+      margin:0 auto;
     }
 
-    .copy p{
+    .text-block p{
       margin:0;
-      line-height: 1.62;
-      font-size: clamp(16px, 2.1vw, 20px);
-      color: var(--muted);
-      font-weight: 400;
+      line-height:1.65;
+      font-size:clamp(17px, 2.2vw, 20px);
+      color:var(--muted);
     }
 
-    .copy strong{
-      color: var(--text);
-      font-weight: 700;
+    .text-block strong{
+      color:var(--text);
+      font-weight:700;
     }
 
     .cta{
-      margin-top: 16px;
-      font-size: clamp(15px, 2vw, 18px);
-      color: var(--text);
-      font-weight: 600;
+      margin-top:18px;
+      font-weight:600;
+      color:var(--text);
     }
 
-    /* Bigger, responsive app logos */
+    /* PLATFORM SECTION — EXACT WIDTH MATCH */
     .platforms{
-      margin-top: 26px;
-      width: min(880px, 100%);
-      margin-left:auto;
-      margin-right:auto;
-
+      max-width:720px; /* matches text width */
+      margin:36px auto 0;
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: clamp(14px, 2.2vw, 26px);
+      grid-template-columns:repeat(4, 1fr);
+      gap:clamp(22px, 3vw, 36px);
       align-items:center;
     }
 
     .platform{
       display:grid;
       place-items:center;
-
-      /* Explicitly ensure there is no “square” behind anything */
-      background: transparent !important;
-      border: 0 !important;
       text-decoration:none;
-      padding: 0; /* remove any card-like feel */
-      outline: none;
-
-      border-radius: 14px; /* only for focus ring */
+      background:transparent;
+      border:0;
+      padding:0;
+      outline:none;
+      border-radius:14px;
     }
 
     .platform:focus-visible{
-      box-shadow: 0 0 0 4px var(--focus);
+      box-shadow:0 0 0 4px var(--focus);
     }
 
     .platform img{
+      height:clamp(80px, 8vw, 120px);
+      width:auto;
       display:block;
-      background: transparent !important;
+      background:transparent;
+    }
 
-      /* scale with screen */
-      height: clamp(64px, 7vw, 104px);
-      width: auto;
-      max-width: 100%;
-
-      /* no weird inline image gap */
-      vertical-align: middle;
+    @media (max-width:760px){
+      .platforms{
+        grid-template-columns:repeat(2, 1fr);
+      }
     }
 
     @media (hover:hover){
       .platform{
-        transition: transform 140ms ease, opacity 140ms ease;
+        transition:transform 140ms ease, opacity 140ms ease;
       }
       .platform:hover{
-        transform: translateY(-2px) scale(1.03);
-        opacity: .92;
+        transform:translateY(-2px) scale(1.04);
+        opacity:.9;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap" aria-label="The Interface podcast subscribe page">
+  <main class="wrap">
+
     <img class="hero-logo" src="Images/THEINTERFACE.jpg" alt="The Interface" />
 
-    <section class="copy">
+    <section class="text-block">
       <p>
-        <strong>The Interface</strong> is the BBC's flagship technology podcast. Join us every week for a fast, funny, and fiercely informed take on how tech is changing every part of your life. Hosted by journalists Thomas Germain, Karen Hao, and Nicky Woolf.
+        Stop doomscrolling. Start decoding the tech that's rewiring your week, and your world. 
+        
+        <strong>The Interface</strong> is the BBC's flagship technology podcast, a fast, funny, and fiercely informed take on how tech is changing every part of your life. Hosted by journalists Thomas Germain, Karen Hao, and Nicky Woolf.
       </p>
-      <p class="cta">Subscribe below on your favorite podcast app:</p>
+<br>
+      <p class="cta">
+        Subscribe below on your favorite podcast app:
+      </p>
     </section>
 
-    <nav class="platforms" aria-label="Podcast platform links">
+    <nav class="platforms">
       <a class="platform"
          href="https://podcasts.apple.com/us/podcast/the-interface/id1870822992"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Listen on Apple Podcasts">
-        <img src="Images/apple.png" alt="Apple Podcasts">
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/apple.svg" alt="Apple Podcasts">
       </a>
 
       <a class="platform"
          href="https://open.spotify.com/show/4J8jzpLa58VMTeY5xGUxxG"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Listen on Spotify">
-        <img src="Images/spotify.png" alt="Spotify">
+         target="_blank" rel="noopener noreferrer">
+        <img src="Images/spotify.svg" alt="Spotify">
       </a>
 
       <a class="platform"
          href="https://pocketcasts.com/podcast/the-interface/c1c38690-d8f4-013e-7c78-02d8c28b0a65"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Listen on Pocket Casts">
+         target="_blank" rel="noopener noreferrer">
         <img src="Images/pocketcasts.png" alt="Pocket Casts">
       </a>
 
       <a class="platform"
          href="https://www.youtube.com/playlist?list=PL-Tad9dbx0_XmuCe_II-kmGfOJzPUcb"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Watch on YouTube">
+         target="_blank" rel="noopener noreferrer">
         <img src="Images/youtube.png" alt="YouTube">
       </a>
     </nav>
+
   </main>
 </body>
 </html>
