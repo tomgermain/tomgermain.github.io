@@ -4,155 +4,181 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Interface Podcast</title>
-  <meta name="description" content="The Interface: the show that explores how tech is rewiring your week and your world." />
+  <meta name="description" content="The Interface is the BBC's flagship technology podcast." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- Google Font: Raleway -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #0b0b0f;
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.72);
+    :root{
+      --bg0:#07080c;
+      --bg1:#0b0b12;
+      --text: rgba(255,255,255,.93);
+      --muted: rgba(255,255,255,.74);
+      --focus: rgba(255,255,255,.22);
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background: var(--bg);
+    /* Important: set BOTH html and body backgrounds */
+    html, body{
+      height: 100%;
+      background: #000; /* fallback */
+    }
+
+    body{
+      margin:0;
+      font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px 16px;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding: 28px 16px;
+
+      background:
+        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.10), transparent 58%),
+        radial-gradient(700px 420px at 15% 20%, rgba(120,150,255,.10), transparent 60%),
+        radial-gradient(700px 420px at 85% 30%, rgba(255,120,180,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
-    .wrap {
-      width: min(920px, 100%);
-      text-align: center;
+    .wrap{
+      width: min(980px, 100%);
+      text-align:center;
     }
 
-    .logo {
-      width: min(520px, 100%);
-      height: auto;
-      margin-bottom: 24px;
+    /* Keep the hero logo narrower than the text column */
+    .hero-logo{
+      width: min(520px, 92vw);
+      height:auto;
+      display:block;
+      margin: 0 auto 18px;
     }
 
-    .copy {
-      max-width: 60ch;
+    .copy{
+      width: min(760px, 100%);
       margin: 0 auto;
     }
 
-    .copy p {
-      margin: 0;
-      line-height: 1.6;
+    .copy p{
+      margin:0;
+      line-height: 1.62;
       font-size: clamp(16px, 2.1vw, 20px);
       color: var(--muted);
       font-weight: 400;
     }
 
-    .copy strong {
+    .copy strong{
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .cta{
+      margin-top: 16px;
+      font-size: clamp(15px, 2vw, 18px);
       color: var(--text);
       font-weight: 600;
     }
 
-    .spacer {
-      height: 18px;
+    /* Bigger, responsive app logos */
+    .platforms{
+      margin-top: 26px;
+      width: min(880px, 100%);
+      margin-left:auto;
+      margin-right:auto;
+
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: clamp(14px, 2.2vw, 26px);
+      align-items:center;
     }
 
-    .cta {
-      margin-top: 6px;
-      font-size: clamp(15px, 2vw, 18px);
-      color: var(--text);
-      font-weight: 500;
+    .platform{
+      display:grid;
+      place-items:center;
+
+      /* Explicitly ensure there is no “square” behind anything */
+      background: transparent !important;
+      border: 0 !important;
+      text-decoration:none;
+      padding: 0; /* remove any card-like feel */
+      outline: none;
+
+      border-radius: 14px; /* only for focus ring */
     }
 
-    .platforms {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
+    .platform:focus-visible{
+      box-shadow: 0 0 0 4px var(--focus);
     }
 
-    .platform {
-      display: inline-block;
-      transition: transform 120ms ease, opacity 120ms ease;
-    }
+    .platform img{
+      display:block;
+      background: transparent !important;
 
-    @media (hover: hover) {
-      .platform:hover {
-        transform: scale(1.06);
-        opacity: 0.85;
-      }
-    }
-
-    .platform img {
-      height: 60px;
+      /* scale with screen */
+      height: clamp(64px, 7vw, 104px);
       width: auto;
-      display: block;
+      max-width: 100%;
+
+      /* no weird inline image gap */
+      vertical-align: middle;
     }
 
-    @media (max-width: 600px) {
-      .platform img {
-        height: 48px;
+    @media (hover:hover){
+      .platform{
+        transition: transform 140ms ease, opacity 140ms ease;
+      }
+      .platform:hover{
+        transform: translateY(-2px) scale(1.03);
+        opacity: .92;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
+  <main class="wrap" aria-label="The Interface podcast subscribe page">
+    <img class="hero-logo" src="Images/THEINTERFACE.jpg" alt="The Interface" />
 
-    <img class="logo" src="Images/THEINTERFACE.jpg" alt="The Interface" />
-
-    <div class="copy">
-      
+    <section class="copy">
       <p>
-        Stop doomscrolling. Start decoding the tech rewiring your week - and your world.<br><br>
-
-        <strong>The Interface</strong> is the BBC's flagship technology podcast. Join us every week for a fast, funny, and fiercely informed take on how tech is changing every part of your life.       
-        Hosted by journalists Thomas Germain, Karen Hao, and Nicky Woolf.
+        <strong>The Interface</strong> is the BBC's flagship technology podcast. Join us every week for a fast, funny, and fiercely informed take on how tech is changing every part of your life. Hosted by journalists Thomas Germain, Karen Hao, and Nicky Woolf.
       </p>
+      <p class="cta">Subscribe below on your favorite podcast app:</p>
+    </section>
 
-      <div class="spacer"></div>
-
-      <p class="cta">
-        Subscribe below on your favorite podcast app:
-      </p>
-    </div>
-
-    <div class="platforms">
+    <nav class="platforms" aria-label="Podcast platform links">
       <a class="platform"
          href="https://podcasts.apple.com/us/podcast/the-interface/id1870822992"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Listen on Apple Podcasts">
         <img src="Images/apple.png" alt="Apple Podcasts">
       </a>
 
       <a class="platform"
          href="https://open.spotify.com/show/4J8jzpLa58VMTeY5xGUxxG"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Listen on Spotify">
         <img src="Images/spotify.png" alt="Spotify">
       </a>
 
       <a class="platform"
          href="https://pocketcasts.com/podcast/the-interface/c1c38690-d8f4-013e-7c78-02d8c28b0a65"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Listen on Pocket Casts">
         <img src="Images/pocketcasts.png" alt="Pocket Casts">
       </a>
 
       <a class="platform"
          href="https://www.youtube.com/playlist?list=PL-Tad9dbx0_XmuCe_II-kmGfOJzPUcb"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Watch on YouTube">
         <img src="Images/youtube.png" alt="YouTube">
       </a>
-    </div>
-
+    </nav>
   </main>
 </body>
 </html>
