@@ -7,118 +7,120 @@
   <meta name="description" content="The Interface is the BBC's flagship technology podcast." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
+  <!-- Google Font: Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
+    :root{
       --text: rgba(255,255,255,.95);
       --muted: rgba(255,255,255,.72);
       --focus: rgba(255,255,255,.25);
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
-    html, body {
-      min-height: 100dvh;
-      background: #0a0a12;
+    html, body{
+      height:100%;
+      background:#000;
     }
 
-    body {
-      margin: 0;
-      font-family: "Raleway", sans-serif;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(32px, 8vw, 72px) clamp(20px, 5vw, 40px);
+    body{
+      margin:0;
+      font-family:"Raleway", sans-serif;
+      color:var(--text);
+      display:grid;
+      place-items:center;
+      padding:50px 20px;
       background:
-        radial-gradient(ellipse 900px 500px at 50% 0%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.06), transparent 60%),
         #0a0a12;
     }
 
-    .wrap {
-      width: 100%;
-      max-width: 720px;
+    .wrap{
+      width:100%;
+      max-width:1000px;
+      text-align:center;
     }
 
-    .hero-logo {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 auto clamp(24px, 4vw, 36px);
+    /* HERO — intentionally wider than text */
+    .hero-logo{
+      display:block;
+      width:min(900px, 96vw);
+      height:auto;
+      margin:0 auto 32px;
     }
 
-    .text-block {
-      width: 100%;
-      text-align: left;
+    /* TEXT COLUMN */
+    .text-block{
+      max-width:720px;
+      margin:0 auto;
     }
 
-    .text-block p {
-      margin: 0 0 clamp(10px, 2vw, 16px);
-      line-height: 1.7;
-      font-size: clamp(15px, 4vw, 19px);
-      color: var(--muted);
-      text-wrap: balance;
+    .text-block p{
+      margin:0;
+      line-height:1.65;
+      font-size:clamp(17px, 2.2vw, 20px);
+      color:var(--muted);
     }
 
-    .text-block p:last-child {
-      margin-bottom: 0;
+    .text-block strong{
+      color:var(--text);
+      font-weight:700;
     }
 
-    .text-block strong {
-      color: var(--text);
-      font-weight: 700;
+    .cta{
+      margin-top:18px;
+      font-weight:600;
+      color:var(--text);
     }
 
-    .platforms {
-      width: 100%;
-      margin: clamp(28px, 5vw, 40px) auto 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(16px, 3vw, 32px);
-      align-items: center;
+    /* PLATFORM SECTION — EXACT WIDTH MATCH */
+    .platforms{
+      max-width:720px; /* matches text width */
+      margin:36px auto 0;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:clamp(22px, 3vw, 36px);
+      align-items:center;
     }
 
-    .platform {
-      display: grid;
-      place-items: center;
-      text-decoration: none;
-      background: transparent;
-      border: 0;
-      padding: 0;
-      outline: none;
-      border-radius: 14px;
+    .platform{
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      background:transparent;
+      border:0;
+      padding:0;
+      outline:none;
+      border-radius:14px;
     }
 
-    .platform:focus-visible {
-      box-shadow: 0 0 0 4px var(--focus);
+    .platform:focus-visible{
+      box-shadow:0 0 0 4px var(--focus);
     }
 
-    .platform img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
+    .platform img{
+      height:clamp(80px, 8vw, 120px);
+      width:auto;
+      display:block;
+      background:transparent;
     }
 
-    @media (max-width: 540px) {
-      .platforms {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 320px;
-        gap: clamp(24px, 7vw, 40px);
+    @media (max-width:760px){
+      .platforms{
+        grid-template-columns:repeat(2, 1fr);
       }
     }
 
-    @media (hover: hover) {
-      .platform {
-        transition: transform 140ms ease, opacity 140ms ease;
+    @media (hover:hover){
+      .platform{
+        transition:transform 140ms ease, opacity 140ms ease;
       }
-      .platform:hover {
-        transform: translateY(-2px) scale(1.05);
-        opacity: .88;
+      .platform:hover{
+        transform:translateY(-2px) scale(1.04);
+        opacity:.9;
       }
     }
   </style>
@@ -131,27 +133,27 @@
 
     <section class="text-block">
       <p>
-        <strong>The Interface</strong> is the BBC's flagship technology podcast, a show about how tech actually matters in your daily life.
+        <strong>The Interface</strong> is the BBC's flagship technology podcast, a show about how tech actually matters in your daily life. 
+        Hosted by Thomas Germain, Karen Hao, and Nicky Woolf
+        <br><br>Fast, funny, and fiercely informed.
       </p>
-      <p>
-        Hosted by Thomas Germain, Karen Hao, and Nicky Woolf. Fast, funny, and fiercely informed.
-      </p>
-      <p>
+
+      <p class="cta">
         Subscribe below on your favorite podcast app:
       </p>
     </section>
 
-    <nav class="platforms" aria-label="Podcast platforms">
+    <nav class="platforms">
       <a class="platform"
          href="https://podcasts.apple.com/us/podcast/the-interface/id1870822992"
          target="_blank" rel="noopener noreferrer">
-        <img src="Images/apple.png" alt="Apple Podcasts">
+        <img src="Images/apple.svg" alt="Apple Podcasts">
       </a>
 
       <a class="platform"
          href="https://open.spotify.com/show/4J8jzpLa58VMTeY5xGUxxG"
          target="_blank" rel="noopener noreferrer">
-        <img src="Images/spotify.png" alt="Spotify">
+        <img src="Images/spotify.svg" alt="Spotify">
       </a>
 
       <a class="platform"
